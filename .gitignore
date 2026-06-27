@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# Environment
+.env
+
+# Build output
+dist/
+build/
+drizzle/
+
+# Lockfiles (generated)
+bun.lock*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model weights (downloaded at runtime)
+*.pt
+
+# Docker volumes
+postgres_data/
+redis_data/
+kafka_data/

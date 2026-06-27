@@ -1,0 +1,33 @@
+# asyncio-compatible dependencies for the Python worker.
+#
+# IMPORTANT: PyTorch CPU-only is installed separately in the
+# Dockerfile BEFORE this file runs, via:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# Since torch is already installed, pip will skip downloading the GPU version
+# when resolving ultralytics' dependencies.
+
+# RTSP ingestion
+opencv-python-headless>=4.10.0,<4.12
+
+# Person detection model
+ultralytics>=8.3.0,<8.4
+
+# WebRTC server-side
+aiortc>=1.9.0,<2.0
+
+# Kafka async client
+aiokafka>=0.11.0,<1.0
+
+# WebSocket client (to connect to backend signaling)
+websockets>=13.0,<16.0
+
+# Redis for dedup/rate limiting
+redis[hiredis]>=5.0,<7.0
+
+# Structured logging
+structlog>=24.0.0,<26.0
+
+# Utilities
+python-dotenv>=1.0.0,<2.0
+numpy>=1.26.0

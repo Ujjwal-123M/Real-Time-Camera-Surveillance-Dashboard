@@ -1,0 +1,15 @@
+# MediaMTX configuration for RTSP test streams
+# Minimal config - accepts any incoming RTSP publish
+
+# Global settings
+logLevel: info
+logDestinations: [stdout]
+
+# RTSP server
+rtsp: yes
+rtspAddress: :8554
+protocols: [tcp]
+
+# Paths - accept any path dynamically
+paths:
+  all_others:

@@ -1,0 +1,206 @@
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── Animated Background ─── */
+.login-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.login-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.login-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.login-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.login-bg-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.12);
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.login-bg-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(16, 185, 129, 0.1);
+  bottom: 20%;
+  right: 15%;
+  animation-delay: -7s;
+}
+
+.login-bg-orb-3 {
+  width: 250px;
+  height: 250px;
+  background: rgba(139, 92, 246, 0.08);
+  top: 60%;
+  left: 60%;
+  animation-delay: -14s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.05); }
+}
+
+/* ─── Container ─── */
+.login-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease, slideUp 0.6s ease;
+}
+
+/* ─── Logo ─── */
+.login-logo {
+  text-align: center;
+}
+
+.login-logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ─── Card ─── */
+.login-card {
+  width: 100%;
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.login-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.login-card-description {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ─── Form ─── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--danger-muted);
+  color: var(--danger);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.login-submit-btn {
+  margin-top: 0.5rem;
+}
+
+/* ─── Toggle ─── */
+.login-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--surface-border);
+}
+
+.login-toggle-text {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.login-toggle-btn {
+  background: none;
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.login-toggle-btn:hover {
+  color: var(--primary-hover);
+}
+
+/* ─── Footer ─── */
+.login-footer {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  text-align: center;
+}
